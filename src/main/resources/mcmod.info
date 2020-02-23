@@ -1,0 +1,16 @@
+[
+{
+  "modid": "dumpids",
+  "name": "Dump IDs",
+  "description": "Writes all blockstates to file",
+  "version": "1.0",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Barteks2x"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
