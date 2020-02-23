@@ -46,7 +46,7 @@ public class DumpIDs {
                             .append(isPrimaryForMeta);
 
                     for (Map.Entry<IProperty<?>, Comparable<?>> prop : state.getProperties().entrySet()) {
-                        sb.append(",").append(prop.getKey().getName()).append("=").append(prop.getValue().toString());
+                        sb.append(",").append(prop.getKey().getName()).append("=").append(getPropertyString(prop.getKey(), prop.getValue()));
                     }
                     pw.println(sb.toString());
                 }
@@ -54,5 +54,10 @@ public class DumpIDs {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
+    }
+
+    @SuppressWarnings("unchecked")
+    private static <T extends Comparable<T>> String getPropertyString(IProperty<T> prop, Comparable<?> value) {
+        return prop.getName((T) value);
     }
 }
